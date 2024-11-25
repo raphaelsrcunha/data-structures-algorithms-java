@@ -32,13 +32,14 @@ public class ListTest {
         System.out.println(list.search("tudoo"));
         System.out.println(list.toString());
 
-        List list2 = new List(2);
+        List<Person> list2 = new List<Person>(2);
 
         Person p1 = new Person("raphael", "123456", "asd@asd.com");
         Person p2 = new Person("maiza", "6654321", "maiza@asd.com");
         Person p3 = new Person("olivinha", "335487", "olivinha@asd.com");
         Person p4 = new Person("joaquim", "65679", "joaquim@asd.com");
         Person p5 = new Person("joaquim", "65679", "joaquim@asd.com");
+        int a = 2;
 
         list2.push(p1);
         list2.push(p2);

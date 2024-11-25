@@ -3,17 +3,17 @@ package com.rsc.dsa.list;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class List {
+public class List<T> {
 
-    private Object[] list;
+    private T[] list;
     private int realLength;
 
     public List(int length) {
-        this.list = new Object[length];
+        this.list =  (T[]) new Object[length];
         realLength = 0;
     }
 
-    public boolean push(Object element) throws Exception {
+    public boolean push(T element) throws Exception {
 
         if(isFull()) {
            this.increaseCapacity();
@@ -24,7 +24,7 @@ public class List {
         return true;
     }
 
-    public boolean push(int position, Object element) {
+    public boolean push(int position, T element) {
 
         if(!this.isValidPosition(position)) {
             throw new IllegalArgumentException("Position invalid");
@@ -46,7 +46,7 @@ public class List {
 
     public void increaseCapacity() {
         if(this.realLength == this.list.length) {
-            Object[] newList = new Object[2*this.list.length];
+            T[] newList = (T[]) new Object[2*this.list.length];
             for(int i = 0; i < this.list.length; i++) {
                 newList[i] = list[i];
             }
@@ -62,7 +62,7 @@ public class List {
         this.realLength--;
     }
 
-    public void pop(Object element) {
+    public void pop(T element) {
         int position = this.search(element);
         if (position == -1) {
             throw new IllegalArgumentException("This element does not exist in this list");
