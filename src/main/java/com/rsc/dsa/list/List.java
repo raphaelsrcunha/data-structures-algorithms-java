@@ -1,16 +1,19 @@
 package com.rsc.dsa.list;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class List {
 
-    private String[] list;
+    private Object[] list;
     private int realLength;
 
     public List(int length) {
-        this.list = new String[length];
+        this.list = new Object[length];
         realLength = 0;
     }
 
-    public boolean push(String element) throws Exception {
+    public boolean push(Object element) throws Exception {
 
         if(isFull()) {
            this.increaseCapacity();
@@ -21,7 +24,7 @@ public class List {
         return true;
     }
 
-    public boolean push(int position, String element) {
+    public boolean push(int position, Object element) {
 
         if(!this.isValidPosition(position)) {
             throw new IllegalArgumentException("Position invalid");
@@ -43,7 +46,7 @@ public class List {
 
     public void increaseCapacity() {
         if(this.realLength == this.list.length) {
-            String[] newList = new String[2*this.list.length];
+            Object[] newList = new Object[2*this.list.length];
             for(int i = 0; i < this.list.length; i++) {
                 newList[i] = list[i];
             }
@@ -58,7 +61,7 @@ public class List {
         this.realLength--;
     }
 
-    public void pop(String element) {
+    public void pop(Object element) {
 
         int position = this.search(element);
 
@@ -111,14 +114,14 @@ public class List {
         return true;
     }
 
-    public String search(int position) {
+    public Object search(int position) {
         if(!this.isValidPosition(position)) {
             throw new IllegalArgumentException("Position invalid");
         }
         return this.list[position];
     }
 
-    public int search(String element) {
+    public int search(Object element) {
         for(int i = 0; i < this.realLength(); i++) {
             if(this.list[i].equals(element)) {
                 return i;
@@ -126,5 +129,4 @@ public class List {
         }
         return -1;
     }
-
 }
