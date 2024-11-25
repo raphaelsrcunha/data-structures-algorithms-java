@@ -55,22 +55,19 @@ public class List {
     }
 
     public void pop(int position) {
-        for(int i = position; i < this.realLength; i++) {
+        for(int i = position; i < this.realLength - 1; i++) {
             list[i] = list[i+1];
         }
+        this.list[realLength-1] = null;
         this.realLength--;
     }
 
     public void pop(Object element) {
-
         int position = this.search(element);
-
         if (position == -1) {
             throw new IllegalArgumentException("This element does not exist in this list");
         }
-
         this.pop(position);
-
     }
 
     public boolean isFull() {
