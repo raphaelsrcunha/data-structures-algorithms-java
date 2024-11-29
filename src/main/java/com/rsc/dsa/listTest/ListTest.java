@@ -2,6 +2,8 @@ package com.rsc.dsa.listTest;
 
 import com.rsc.dsa.Person;
 import com.rsc.dsa.list.List;
+import com.rsc.dsa.list.ListInherited;
+import com.rsc.dsa.stack.Stack;
 
 public class ListTest {
 
@@ -50,6 +52,34 @@ public class ListTest {
         list2.push(p2);
         list2.pop(p5);
 
+        ListInherited l1 = new ListInherited<>();
+
+        l1.push(p1);
+        l1.push(p2);
+
+        ListInherited l2 = new ListInherited<>();
+        l2.push(2);
+        l2.push(5);
+        l2.push(7);
+
+
+        Stack<Integer> s1 = new Stack<Integer>();
+
+        System.out.println(s1.isEmpty());
+        s1.push(3);
+        s1.push(5);
+        System.out.println(s1.isEmpty());
+        s1.push(8);
+        System.out.println(s1.peek());
+        s1.pop();
+        s1.push(99);
+        s1.pop();
+        System.out.println(s1.peek());
+        s1.pop();
+        System.out.println(s1.peek());
+        s1.pop();
+        System.out.println(s1.peek());
+        System.out.println(s1.isEmpty());
 
     }
 
