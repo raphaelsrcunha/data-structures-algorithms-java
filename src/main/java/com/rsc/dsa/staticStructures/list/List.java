@@ -1,4 +1,4 @@
-package com.rsc.dsa.list;
+package com.rsc.dsa.staticStructures.list;
 
 import java.util.Arrays;
 import java.util.Objects;

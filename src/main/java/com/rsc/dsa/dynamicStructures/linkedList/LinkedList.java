@@ -1,4 +1,4 @@
-package com.rsc.dsa.linkedList;
+package com.rsc.dsa.dynamicStructures.linkedList;
 
 public class LinkedList<T> {
 

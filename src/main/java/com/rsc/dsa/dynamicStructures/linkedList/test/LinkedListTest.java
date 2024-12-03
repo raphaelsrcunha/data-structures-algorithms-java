@@ -1,6 +1,6 @@
-package com.rsc.dsa.linkedList.test;
+package com.rsc.dsa.dynamicStructures.linkedList.test;
 
-import com.rsc.dsa.linkedList.LinkedList;
+import com.rsc.dsa.dynamicStructures.linkedList.LinkedList;
 
 public class LinkedListTest {
 

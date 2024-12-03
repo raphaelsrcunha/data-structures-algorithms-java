@@ -1,4 +1,4 @@
-package com.rsc.dsa.common;
+package com.rsc.dsa.staticStructures;
 
 public class StaticStructure<T> {
 

@@ -1,4 +1,4 @@
-package com.rsc.dsa.queue;
+package com.rsc.dsa.staticStructures.queue;
 
 public class PriorityQueue<T> extends Queue<T> {
 

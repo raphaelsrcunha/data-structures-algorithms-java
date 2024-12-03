@@ -1,44 +1,87 @@
 package com.rsc.dsa;
 
-import com.rsc.dsa.list.ListInherited;
-import com.rsc.dsa.queue.Patient;
-import com.rsc.dsa.queue.PriorityQueue;
-import com.rsc.dsa.queue.Queue;
+import com.rsc.dsa.staticStructures.list.List;
+import com.rsc.dsa.staticStructures.list.ListInherited;
+import com.rsc.dsa.staticStructures.queue.Patient;
+import com.rsc.dsa.staticStructures.queue.PriorityQueue;
+import com.rsc.dsa.staticStructures.queue.Queue;
+import com.rsc.dsa.staticStructures.stack.Stack;
 
 public class Main {
     public static void main(String[] args) throws Exception {
 
-        ListInherited list = new ListInherited();
+        List list = new List(5);
+        list.push("oi");
+        System.out.println(list.realLength());
+        list.push("tudo");
+        list.push("bem");
+        System.out.println(list.realLength());
+        System.out.println(list.realLength());
+        System.out.println(list.toString());
+        list.push(0, "eitanois");
+        try{
+            System.out.println(list.search(3));
+            System.out.println(list.search(6));
+        } catch(Exception ex) {
+            System.out.println(ex.toString());
+        }
+        System.out.println(list.search("tudo"));
+        list.push("rapha");
+        list.push("ma");
+        list.pop(2);
+        list.pop(2);
+        list.pop(2);
+        list.pop(2);
+        list.pop("oi");
+        System.out.println(list.search("tudoo"));
+        System.out.println(list.toString());
 
-        Queue<Integer> q1 = new Queue<Integer>(3);
-        System.out.println(q1.toString());
-        System.out.println(q1.isEmpty());
-        System.out.println(q1.isFull());
+        List<Person> list2 = new List<Person>(2);
 
-        q1.add(3);
-        q1.add(5);
-        q1.add(6);
-        System.out.println(q1.peek());
-        q1.add(15);
-        System.out.println(q1.remove());
-        q1.add(16);
-        System.out.println(q1.peek());
-        System.out.println(q1.realLength());
-        q1.add(5);
-        System.out.println(q1.remove());
-        System.out.println(q1.toString());
+        Person p1 = new Person("raphael", "123456", "asd@asd.com");
+        Person p2 = new Person("maiza", "6654321", "maiza@asd.com");
+        Person p3 = new Person("olivinha", "335487", "olivinha@asd.com");
+        Person p4 = new Person("joaquim", "65679", "joaquim@asd.com");
+        Person p5 = new Person("joaquim", "65679", "joaquim@asd.com");
+        int a = 2;
 
-        Patient p1 = new Patient("p1", 1);
-        Patient p2 = new Patient("p2", 4);
-        Patient p3 = new Patient("p3", 2);
-        Patient p4 = new Patient("p4", 100);
+        list2.push(p1);
+        list2.push(p2);
+        list2.push(p3);
+        list2.push(p4);
+        list2.pop(1);
+        list2.push(p1);
+        list2.push(p2);
+        list2.pop(p5);
 
-        PriorityQueue pq1 = new PriorityQueue();
-        System.out.println(pq1);
-        pq1.add(p1);
-        pq1.add(p2);
-        pq1.add(p3);
-        pq1.add(p4);
-        System.out.println(pq1);
+        ListInherited l1 = new ListInherited<>();
+
+        l1.push(p1);
+        l1.push(p2);
+
+        ListInherited l2 = new ListInherited<>();
+        l2.push(2);
+        l2.push(5);
+        l2.push(7);
+
+
+        Stack<Integer> s1 = new Stack<Integer>();
+
+        System.out.println(s1.isEmpty());
+        s1.push(3);
+        s1.push(5);
+        System.out.println(s1.isEmpty());
+        s1.push(8);
+        System.out.println(s1.peek());
+        s1.pop();
+        s1.push(99);
+        s1.pop();
+        System.out.println(s1.peek());
+        s1.pop();
+        System.out.println(s1.peek());
+        s1.pop();
+        System.out.println(s1.peek());
+        System.out.println(s1.isEmpty());
+
     }
 }
