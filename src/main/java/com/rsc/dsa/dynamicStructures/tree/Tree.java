@@ -35,67 +35,60 @@ public class Tree<T extends Comparable> {
     }
 
     public boolean remove(T element) {
+        if (this.root == null) return false; // Empty tree
 
         Node<T> current = this.root;
-        Node<T> fatherOfCurrent = new Node<T>(null);
+        Node<T> fatherOfCurrent = null;
 
-        while(element != null) {
-            if(current.getElement().equals(element)) {
-                break;
-            } else if(element.compareTo(current.getElement()) == -1) {
-                fatherOfCurrent = current;
+        // search node
+        while (current != null && !current.getElement().equals(element)) {
+            fatherOfCurrent = current;
+            if (element.compareTo(current.getElement()) < 0) {
                 current = current.getLeft();
             } else {
-                fatherOfCurrent = current;
                 current = current.getRight();
             }
         }
 
-        if(current != null) {
-
-            //Element has two children
-            if(current.getRight() != null) {
-
-                Node<T> substitute = current.getRight();
-                Node<T> fatherOfSubstitute = current;
-                while(substitute.getLeft() != null) {
-                    fatherOfSubstitute = substitute;
-                    substitute = substitute.getLeft();
-                }
-                if(current.getElement().compareTo(fatherOfCurrent.getElement()) == -1) {
-                    fatherOfCurrent.setLeft(substitute);
-                } else {
-                    fatherOfCurrent.setRight(substitute);
-                }
-
-            } else if(current.getLeft() != null) { // children on left
-                //esquerda e tudo à direita, até que não tenha próximo. esse é o elemento que deve substituir
-                Node<T> substitute = current.getLeft();
-                Node<T> fatherOfSubstitute = current;
-                while(substitute.getRight() != null) {
-                    fatherOfSubstitute = substitute;
-                    substitute = substitute.getRight();
-                }
-                if(current.getElement().compareTo(fatherOfCurrent.getElement()) == -1) {
-                    fatherOfCurrent.setLeft(substitute);
-                } else {
-                    fatherOfCurrent.setRight(substitute);
-                }
-            } else if(current.getRight() != null) { // children on right
-
-            } else { // no children
-                if(current.getElement().compareTo(fatherOfCurrent.getElement()) == -1) {
-                    fatherOfCurrent.setLeft(null);
-                } else {
-                    fatherOfCurrent.setRight(null);
-                }
-            }
-
-            return true;
-        } else {
+        if (current == null) {
             return false;
         }
 
+        // Case 1: Node with two children
+        if (current.getLeft() != null && current.getRight() != null) {
+            Node<T> substitute = current.getRight();
+            Node<T> fatherOfSubstitute = current;
+
+            // Find lower element of right subtree
+            while (substitute.getLeft() != null) {
+                fatherOfSubstitute = substitute;
+                substitute = substitute.getLeft();
+            }
+
+            current.setElement(substitute.getElement());
+
+            // Remove the substitute from the original position
+            if (fatherOfSubstitute.getLeft() == substitute) {
+                fatherOfSubstitute.setLeft(substitute.getRight());
+            } else {
+                fatherOfSubstitute.setRight(substitute.getRight());
+            }
+        }
+        // Case 2: Node with only one or no children
+        else {
+            Node<T> child = (current.getLeft() != null) ? current.getLeft() : current.getRight();
+
+            if (fatherOfCurrent == null) {
+                // In case of current node is the root
+                this.root = child;
+            } else if (current == fatherOfCurrent.getLeft()) {
+                fatherOfCurrent.setLeft(child);
+            } else {
+                fatherOfCurrent.setRight(child);
+            }
+        }
+
+        return true;
     }
 
     public void printInOrder(Node<T> current) {
