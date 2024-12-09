@@ -1,4 +1,4 @@
-package com.rsc.dsa.dynamicStructures.graph;
+package com.rsc.dsa.data_structure.dynamicStructures.graph;
 
 public class Edge<T> {
 

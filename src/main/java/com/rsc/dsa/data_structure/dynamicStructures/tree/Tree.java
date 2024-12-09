@@ -1,4 +1,4 @@
-package com.rsc.dsa.dynamicStructures.tree;
+package com.rsc.dsa.data_structure.dynamicStructures.tree;
 
 public class Tree<T extends Comparable> {
 

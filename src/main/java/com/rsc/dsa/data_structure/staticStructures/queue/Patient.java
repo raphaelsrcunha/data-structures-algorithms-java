@@ -1,4 +1,4 @@
-package com.rsc.dsa.staticStructures.queue;
+package com.rsc.dsa.data_structure.staticStructures.queue;
 
 public class Patient implements Comparable<Patient>{
 

@@ -1,6 +1,6 @@
-package com.rsc.dsa.dynamicStructures.tree.test;
+package com.rsc.dsa.data_structure.dynamicStructures.tree.test;
 
-import com.rsc.dsa.dynamicStructures.tree.Tree;
+import com.rsc.dsa.data_structure.dynamicStructures.tree.Tree;
 
 public class TreeTest {
     public static void main(String[] args) {

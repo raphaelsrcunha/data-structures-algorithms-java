@@ -1,11 +1,8 @@
 package com.rsc.dsa;
 
-import com.rsc.dsa.staticStructures.list.List;
-import com.rsc.dsa.staticStructures.list.ListInherited;
-import com.rsc.dsa.staticStructures.queue.Patient;
-import com.rsc.dsa.staticStructures.queue.PriorityQueue;
-import com.rsc.dsa.staticStructures.queue.Queue;
-import com.rsc.dsa.staticStructures.stack.Stack;
+import com.rsc.dsa.data_structure.staticStructures.list.List;
+import com.rsc.dsa.data_structure.staticStructures.list.ListInherited;
+import com.rsc.dsa.data_structure.staticStructures.stack.Stack;
 
 public class Main {
     public static void main(String[] args) throws Exception {

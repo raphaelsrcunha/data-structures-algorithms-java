@@ -1,6 +1,6 @@
-package com.rsc.dsa.staticStructures.stack;
+package com.rsc.dsa.data_structure.staticStructures.stack;
 
-import com.rsc.dsa.staticStructures.StaticStructure;
+import com.rsc.dsa.data_structure.staticStructures.StaticStructure;
 
 public class Stack<T> extends StaticStructure<T> {
 

@@ -1,4 +1,4 @@
-package com.rsc.dsa.staticStructures;
+package com.rsc.dsa.data_structure.staticStructures;
 
 public class StaticStructure<T> {
 

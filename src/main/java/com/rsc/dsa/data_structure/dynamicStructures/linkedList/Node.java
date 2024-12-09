@@ -1,4 +1,4 @@
-package com.rsc.dsa.dynamicStructures.linkedList;
+package com.rsc.dsa.data_structure.dynamicStructures.linkedList;
 
 public class Node<T> {
 

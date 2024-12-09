@@ -1,6 +1,6 @@
-package com.rsc.dsa.staticStructures.list;
+package com.rsc.dsa.data_structure.staticStructures.list;
 
-import com.rsc.dsa.staticStructures.StaticStructure;
+import com.rsc.dsa.data_structure.staticStructures.StaticStructure;
 
 public class ListInherited<T> extends StaticStructure<T> {
 

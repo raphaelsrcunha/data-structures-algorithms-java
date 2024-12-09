@@ -1,6 +1,6 @@
-package com.rsc.dsa.staticStructures.queue;
+package com.rsc.dsa.data_structure.staticStructures.queue;
 
-import com.rsc.dsa.staticStructures.StaticStructure;
+import com.rsc.dsa.data_structure.staticStructures.StaticStructure;
 
 public class Queue<T> extends StaticStructure<T> {
 

@@ -1,4 +1,4 @@
-package com.rsc.dsa.staticStructures.list.test;
+package com.rsc.dsa.data_structure.staticStructures.list.test;
 
 public class ListTest {
 
